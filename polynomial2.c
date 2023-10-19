@@ -32,23 +32,23 @@ int main(){
     
     
     printf("\n");
-    printf("Format if Highest degree is of 2nd polynomial,\nwrite 0 in empty coeffecients of polynomial 1\n\n");
+    printf("Coefficient 1 is the coefficient of the\nvariable of the highest degree and same\ncontinued for polynomial 2\n\n");
 //process for selecting array for 1st polynomial
-    for (k=0;k<fmax(n1,n2)+1;k++)
+    for (k=n1;k>(-1);k--)
     {
-        printf("Enter coefficient %0.0f of polynomial 1: ",fmax(n1,n2)+1-k);
+        printf("Enter coefficient %0.0d of polynomial 1: ",n1+1-k);
         scanf("%d",&poly1[k]);
     }
     printf("Polynomial 1 is: ");
-    for (l=fmax(n1,n2);l>(-1);l--)
+    for (l=n2;l>(-1);l--)
     { 
         printf("%dx^%d,", poly1[l],l);
     }
     printf("\n");
 //process for selecting array for 2nd polynomial
-    for (p=0;p<fmax(n1,n2)+1;p++)
+    for (p=fmax(n1,n2);p>(-1);p--)
     {
-        printf("Enter coefficient %0.0f of polynomial 2: ",fmax(n1,n2)+1-p);
+        printf("Enter coefficient %0.0d of polynomial 2: ",n2+1-p);
         scanf("%d",&poly2[p]);
     }
     printf("Polynomial 2 is: ");
@@ -60,7 +60,7 @@ int main(){
 //now process for operation addition subtraction or multiplication
     printf("Enter your Choice\n+\n*\n- :-\na(poly1-poly2)\nb(poly2-poly1) : ");
     scanf(" %c", &function);
-    printf("\nResult is: ");
+    printf("\nResult is:\n");
     switch (function)
     {
     case '+':
@@ -90,6 +90,7 @@ int main(){
                 printf("%dx^%d,",poly1[x]*poly2[y],x+y);
                 w++;
             }
+            printf("\n");
         }
         break;
     default:
@@ -97,9 +98,5 @@ int main(){
         break;
     }
     printf("\n\n");
-/*for (u=0;u<(i*i);u++)
-    {
-        printf("%d,",set[u]);
-    }*/
     return 0;
 }
